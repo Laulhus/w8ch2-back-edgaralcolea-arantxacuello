@@ -2,9 +2,8 @@ const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const cors = require("cors");
-const { notFoundError, generalError } = require("./server/middlewares/errors");
-
-const tuitRouter = require("./server/routers/tuitRouter");
+const tuitRouter = require("./routers/tuitRouter");
+const { notFoundError, generalError } = require("./middlewares/errors");
 
 const app = express();
 

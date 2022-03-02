@@ -2,17 +2,18 @@
   "name": "challenge-2-back",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
     "start": "node src",
     "test-coverage": "jest --watchAll --coverage",
-    "start-dev": "nodemon src -q"
+    "start-dev": "nodemon . -q"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "debug": "^4.3.3",
     "dotenv": "^16.0.0",
