@@ -2,10 +2,11 @@ const { model, Schema } = require("mongoose");
 
 const TuitSchema = new Schema({
   date: {
-    timestamps: true,
+    type: Date,
     default: Date.now,
   },
   text: {
+    type: String,
     required: true,
     maxlength: 200,
     minlength: 1,
