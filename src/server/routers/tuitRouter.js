@@ -9,7 +9,7 @@ const {
 const tuitRouter = express.Router();
 
 tuitRouter.get("/", getAllTuits);
-tuitRouter.get("/delete/:id", deleteTuit);
+tuitRouter.delete("/delete/:id", deleteTuit);
 tuitRouter.get("/like/:id", likeTuit);
 tuitRouter.post("/create", createTuit);
 
