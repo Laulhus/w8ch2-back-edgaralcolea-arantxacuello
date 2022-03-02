@@ -22,4 +22,36 @@ const deleteTuit = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllTuits, deleteTuit };
+const createTuit = async (req, res, next) => {
+  try {
+    const newTuit = await Tuit.create(req.body);
+    if (newTuit) {
+      res.status(201);
+      res.json(newTuit);
+      return;
+    } else {
+      const error = new Error("Invalid data format");
+      error.code = 400;
+      next(error);
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+const likeTuit = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const updatedTuit = Tuit.findByIdAndUpdate(
+      id,
+      { likes: likes + 1 },
+      { new: true }
+    );
+    res.status(200);
+    res.json(updatedTuit);
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getAllTuits, deleteTuit, createTuit, likeTuit };
