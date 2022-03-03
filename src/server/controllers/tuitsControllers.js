@@ -44,7 +44,7 @@ const likeTuit = async (req, res, next) => {
   try {
     const updatedTuit = Tuit.findByIdAndUpdate(
       id,
-      { likes: likes + 1 },
+      { likes: (likes += 1) },
       { new: true }
     );
     res.status(200);
